@@ -21,10 +21,6 @@ module Rack
 
   private
 
-    def app
-      @app
-    end
-
     attr_reader :app
     attr_reader :out
 
