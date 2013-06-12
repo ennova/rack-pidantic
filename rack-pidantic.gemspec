@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Tate Johnson']
   s.email       = ['tate@thebestday.com']
   s.homepage    = 'http://github.com/thebestday/rack-pidantic'
-  s.summary     = 'Log PID and Request ID'
-  s.description = 'Log PID and Request ID'
+  s.summary     = 'Log the PID and Request ID.'
+  s.description = 'Log the PID and Request ID on each request to give visiblity into the history of a particular process (Eg: Unicorn worker)'
   s.license     = 'MIT'
 
   s.files      = Dir['{lib}/**/*', 'LICENSE', 'Rakefile', 'README.md']
