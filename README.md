@@ -1,6 +1,8 @@
 # Rack::Pidantic
 
-Log the PID and Request ID on each request to give visiblity into the history
+[![Build Status](https://travis-ci.org/thebestday/rack-pidantic.png?branch=master)](https://travis-ci.org/thebestday/rack-pidantic)
+
+Log the PID and Request ID on each request to give visibility into the history
 of a particular process (Eg: Unicorn worker).
 
 Request ID is resolved in this order, giving preference to Heroku.
@@ -15,6 +17,11 @@ Logging is directed to standard out on info level. Example:
     heroku/router: at=info method=GET path=/ host=www.myapp.com request_id=268725430ada5ad9bac162e7baed104d fwd="203.101.294.78" dyno=web.3 connect=2ms service=108ms status=201 bytes=97
 
 Inspiration taken from [Rack::Timeout](https://github.com/kch/rack-timeout).
+
+## Dependencies
+
+* Ruby 1.9, 2.0
+* Rack
 
 ## Installation
 
