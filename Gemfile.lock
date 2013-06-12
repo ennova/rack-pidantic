@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    rack-pidiful (0.0.1)
+      rack (>= 1.4.5)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rack (1.5.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rack-pidiful!
