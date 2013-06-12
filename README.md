@@ -5,9 +5,10 @@
 Log the PID and Request ID on each request to give visibility into the history
 of a particular process (Eg: Unicorn worker).
 
-Request ID is resolved in this order, giving preference to Heroku.
+The Request ID is resolved by looking at the headers in this order,
+giving preference to Heroku.
 
-    HTTP_HEROKU_REQUEST_ID -> env['HTTP_X_REQUEST_ID'] -> Randomly Generated
+    HTTP_HEROKU_REQUEST_ID -> HTTP_X_REQUEST_ID -> Randomly Generated
 
 Logging is directed to standard out on info level. Example:
 
@@ -34,12 +35,12 @@ Run bundler.
     $ bundle install
 
 If you're using Rails then Rack::Pidantic will automatically be inserted
-into your middleware stack. If you're using Sinatra than take a look at
+into your middleware stack. If you're using Sinatra then take a look at
 how to use [Rack Middleware](http://www.sinatrarb.com/intro.html#Rack%20Middleware).
 
 ## Tests
 
-Execute the entire test suite.
+Run the entire test suite.
 
     $ rake
 
