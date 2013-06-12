@@ -1,9 +1,9 @@
 # Rack::Pidantic
 
-Log PID and Request ID on each request to give visiblity into the history
+Log the PID and Request ID on each request to give visiblity into the history
 of a particular process (Eg: Unicorn worker).
 
-Request ID is resolved in this order:
+Request ID is resolved in this order, giving preference to Heroku.
 
     HTTP_HEROKU_REQUEST_ID -> env['HTTP_X_REQUEST_ID'] -> Randomly Generated
 
@@ -18,7 +18,19 @@ Inspiration taken from [Rack::Timeout](https://github.com/kch/rack-timeout).
 
 ## Installation
 
+Add this to your gemfile.
+
     gem 'rack-pidantic', github: 'thebestday/rack-pidantic
+
+Run bundler.
+
+    $ bundle install
+
+## Tests
+
+Execute the entire test suite.
+
+    $ rake
 
 ## Copyright
 
