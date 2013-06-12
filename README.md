@@ -33,6 +33,10 @@ Run bundler.
 
     $ bundle install
 
+If you're using Rails then Rack::Pidantic will automatically be inserted
+into your middleware stack. If you're using Sinatra than take a look at
+how to use [Rack Middleware](http://www.sinatrarb.com/intro.html#Rack%20Middleware).
+
 ## Tests
 
 Execute the entire test suite.
