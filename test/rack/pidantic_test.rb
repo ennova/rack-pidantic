@@ -1,33 +1,33 @@
 require 'minitest/autorun'
-require 'rack-pidiful'
+require 'rack-pidantic'
 
-class Rack::PidifulTest < MiniTest::Unit::TestCase
+class Rack::PidanticTest < MiniTest::Unit::TestCase
   def setup
-    @out     = StringIO.new
-    @app     = Proc.new { |env| env }
-    @pidiful = Rack::Pidiful.new @app, out: @out
+    @out      = StringIO.new
+    @app      = Proc.new { |env| env }
+    @pidantic = Rack::Pidantic.new @app, out: @out
   end
 
   def output
     @out.string
   end
 
-  def pidiful
-    @pidiful
+  def pidantic
+    @pidantic
   end
 
   def test_call_logs_source
     env = {}
 
-    pidiful.call env
+    pidantic.call env
 
-    assert_includes output, 'source=rack-pidiful'
+    assert_includes output, 'source=rack-pidantic'
   end
 
   def test_call_logs_heroku_request_id
     env = {'HTTP_X_REQUEST_ID' => '2aa03f'}
 
-    pidiful.call env
+    pidantic.call env
 
     assert_includes output, '2aa03f'
   end
@@ -35,7 +35,7 @@ class Rack::PidifulTest < MiniTest::Unit::TestCase
   def test_call_logs_x_request_id
     env = {'HTTP_HEROKU_REQUEST_ID' => '55a1f3'}
 
-    pidiful.call env
+    pidantic.call env
 
     assert_includes output, '55a1f3'
   end
@@ -43,7 +43,7 @@ class Rack::PidifulTest < MiniTest::Unit::TestCase
   def test_call_logs_random_id
     env = {}
 
-    pidiful.call env
+    pidantic.call env
 
     assert_includes output, 'rand-'
   end
@@ -51,7 +51,7 @@ class Rack::PidifulTest < MiniTest::Unit::TestCase
   def test_call_logs_process_id
     env = {}
 
-    pidiful.call env
+    pidantic.call env
 
     assert_includes output, Process.pid.to_s
   end

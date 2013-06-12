@@ -1,13 +1,13 @@
 $:.push File.expand_path('../lib', __FILE__)
 
-require 'rack/pidiful/version'
+require 'rack/pidantic/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'rack-pidiful'
-  s.version     = Rack::Pidiful::VERSION
+  s.name        = 'rack-pidantic'
+  s.version     = Rack::Pidantic::VERSION
   s.authors     = ['Tate Johnson']
   s.email       = ['tate@thebestday.com']
-  s.homepage    = 'http://github.com/thebestday/rack-pidiful'
+  s.homepage    = 'http://github.com/thebestday/rack-pidantic'
   s.summary     = 'Log PID and Request ID'
   s.description = 'Log PID and Request ID'
   s.license     = 'MIT'

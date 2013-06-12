@@ -1,10 +1,10 @@
 require 'logger'
 require 'securerandom'
 
-require 'rack/pidiful/version'
+require 'rack/pidantic/version'
 
 module Rack
-  class Pidiful
+  class Pidantic
     def initialize app, options = {}
       @app = app
       @out = options.fetch :out, $stdout
@@ -14,7 +14,7 @@ module Rack
       request_id = env['HTTP_HEROKU_REQUEST_ID'] || env['HTTP_X_REQUEST_ID'] || "rand-#{SecureRandom.hex}"
       process_id = Process.pid
 
-      logger.info "source=rack-pidiful request_id=#{request_id} process_id=#{process_id}"
+      logger.info "source=rack-pidantic request_id=#{request_id} process_id=#{process_id}"
 
       app.call env
     end

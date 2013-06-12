@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rack-pidiful (0.0.1)
+    rack-pidantic (0.0.1)
       rack (>= 1.4.5)
 
 GEM
@@ -13,4 +13,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rack-pidiful!
+  rack-pidantic!
